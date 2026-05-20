@@ -17,10 +17,18 @@ const features = [
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
-      <header className="sticky top-0 z-50 w-full bg-slate-950/10 backdrop-blur-2xl transition">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-          <div className="text-2xl font-bold text-cyan-300">Block Mind</div>
+    <div
+      className="min-h-screen text-slate-100"
+      style={{
+        backgroundImage: `url(${homeSenac})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <header className="absolute inset-x-0 top-0 z-50 w-full bg-transparent">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div className="text-2xl font-bold text-white">Nexis</div>
           <nav className="hidden gap-8 text-sm uppercase tracking-[0.2em] text-slate-300 md:flex">
             <a href="#features" className="transition hover:text-white">
               Recursos
@@ -38,59 +46,51 @@ function App() {
       <main>
         <section
           className="relative overflow-hidden px-6 py-24 sm:py-32"
-          style={{ backgroundImage: `url(${homeSenac})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+          style={{
+            backgroundImage: `url(${homeSenac})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
         >
           <div className="absolute inset-0 bg-slate-950/70" />
           <div className="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-cyan-500/20 to-transparent" />
-          <div className="relative mx-auto flex max-w-7xl flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl space-y-8">
-              <p className="inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-200">
-                Landing page pronta para customizar
-              </p>
-              <div className="space-y-6">
-                <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-6xl">
-                  Construa sua presença online com velocidade e estilo.
-                </h1>
-                <p className="max-w-xl text-lg leading-8 text-slate-300">
-                  Use esta base em React + Vite + Tailwind para criar uma landing page moderna, responsiva e fácil de manter.
+
+          <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center text-center">
+            <div className="max-w-3xl space-y-8">
+              <h1
+                className="text-white font-normal leading-[0.9] tracking-[-0.015em] text-[70px] sm:text-[90px] lg:text-[100px]"
+                style={{ fontFamily: 'multi-display, sans-serif' }}
+              >
+                INVEST IN
+                <br />
+                <span className="italic">CREATIVITY</span>
+              </h1>
+
+              {/* BOTÃO COM GRADIENTE */}
+              <a
+                href="#features"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-r from-[#467CE4] to-[#5DB1D3] px-8 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-white shadow-lg"
+              >
+                <span className="absolute inset-0 w-0 bg-white transition-all duration-500 ease-out group-hover:w-full"></span>
+
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-[#467CE4]">
+                  Explore our services
+                </span>
+              </a>
+
+              {/* SCROLL INDICATOR */}
+              <div className="mt-12 flex flex-col items-center gap-3">
+                <div
+                  className="flex h-12 w-12 items-center justify-center rounded-full text-white"
+                  style={{ border: '1px solid #305693' }}
+                >
+                  ↓
+                </div>
+                <p className="text-xs uppercase tracking-[0.3em] text-slate-300 leading-relaxed">
+                  SCROLL FOR MORE
+                  <br />
+                  ABOUT NEXIS
                 </p>
-              </div>
-
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <a
-                  href="#contact"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-cyan-400 px-8 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-300 sm:w-auto"
-                >
-                  Começar agora
-                </a>
-                <a
-                  href="#features"
-                  className="inline-flex w-full items-center justify-center rounded-full border border-slate-700 px-8 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500 sm:w-auto"
-                >
-                  Ver recursos
-                </a>
-              </div>
-            </div>
-
-            <div className="mx-auto w-full max-w-xl rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl sm:p-12">
-              <div className="space-y-6">
-                <div className="rounded-3xl border border-cyan-500/20 bg-slate-900/90 p-6">
-                  <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">Estrutura</p>
-                  <h2 className="mt-4 text-2xl font-semibold text-white">Template de landing page</h2>
-                  <p className="mt-3 text-slate-300">
-                    Inclui navegação fixa, hero, seção de recursos e chamada para ação pronta para editar.
-                  </p>
-                </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-3xl bg-slate-950/80 p-5 text-slate-300">
-                    <p className="text-sm uppercase tracking-[0.2em] text-cyan-300">Visual</p>
-                    <p className="mt-2 text-base">Ajuste cores e tipografia com Tailwind em segundos.</p>
-                  </div>
-                  <div className="rounded-3xl bg-slate-950/80 p-5 text-slate-300">
-                    <p className="text-sm uppercase tracking-[0.2em] text-cyan-300">Performance</p>
-                    <p className="mt-2 text-base">Build leve e desenvolvimento rápido usando Vite.</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
