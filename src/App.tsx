@@ -1,5 +1,10 @@
+import { FaDiscord, FaTwitter, FaYoutube } from 'react-icons/fa'
+
 import homeSenac from './assets/images/home-senac.png'
 import bibliotecaNpc from './assets/images/biblioteca-npc.png'
+import kaioImage from './assets/images/kaio-image.png'
+import kaykeImage from './assets/images/kayke-image.png'
+import logo from './assets/icons/logo.png'
 
 function App() {
   const scrollToFeatures = () => {
@@ -33,12 +38,24 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen text-slate-100">
+    <div className="min-h-screen bg-white text-slate-100">
       {/* HEADER */}
       <header className="absolute inset-x-0 top-0 z-50 w-full bg-transparent">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="text-2xl font-bold text-white">Nexis</div>
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+          {/* LOGO */}
+          <div className="-ml-2 flex items-center">
+            <img
+              src={logo}
+              alt="Nexis Logo"
+              className="h-[82px] w-[82px] object-contain"
+            />
 
+            <div className="-ml-3 text-[36px] font-semibold italic tracking-[-0.03em] text-white">
+              Nexis
+            </div>
+          </div>
+
+          {/* NAV */}
           <nav className="hidden gap-8 text-sm uppercase tracking-[0.2em] text-slate-300 md:flex">
             <a href="#features" className="transition hover:text-white">
               Features
@@ -112,18 +129,17 @@ function App() {
           </div>
         </section>
 
-        {/* SEGUNDA SECTION (AJUSTADA PARA BRANCO) */}
+        {/* FEATURES */}
         <section
           id="features"
-          className="overflow-hidden bg-white py-28 text-slate-900"
+          className="overflow-hidden bg-white py-24 text-slate-900"
         >
-          {/* TOPO */}
-          <div className="mx-auto mb-20 max-w-7xl px-6">
+          <div className="mx-auto mb-14 max-w-7xl px-6">
             <p className="text-sm font-bold uppercase tracking-[0.3em] text-slate-500">
               WHO WE ARE
             </p>
 
-            <h2 className="mt-6 text-5xl font-bold leading-[1.05] tracking-[-0.03em] sm:text-6xl">
+            <h2 className="mt-5 text-4xl font-bold leading-[1.02] tracking-[-0.03em] sm:text-5xl">
               Nexis uses
               <br />
               Minecraft as a
@@ -136,20 +152,17 @@ function App() {
             </h2>
           </div>
 
-          {/* IMAGEM + TEXTO */}
-          <div className="grid items-center gap-20 lg:grid-cols-[1.3fr_0.7fr]">
-            {/* IMAGEM */}
-            <div className="-ml-10 overflow-hidden rounded-r-[2rem] shadow-2xl">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="-ml-6 overflow-hidden rounded-r-[2rem] shadow-2xl">
               <img
                 src={bibliotecaNpc}
                 alt="Minecraft Library"
-                className="h-[650px] w-full object-cover"
+                className="h-[500px] w-full object-cover"
               />
             </div>
 
-            {/* TEXTO */}
             <div className="max-w-[480px] px-6 lg:px-0">
-              <p className="text-xl font-bold leading-10 text-[#7F8286]">
+              <p className="text-[17px] font-bold leading-8 text-[#7F8286]">
                 Nexis transforms Minecraft into an immersive educational
                 platform where students can explore interactive worlds,
                 engage with intelligent NPCs, and answer vestibular-style
@@ -159,7 +172,7 @@ function App() {
                 interactive learning experiences inside Minecraft.
               </p>
 
-              <button className="mt-10 border-b-2 border-[#487EEB] pb-2 text-sm font-bold uppercase tracking-[0.2em] text-[#487EEB] transition hover:opacity-70">
+              <button className="mt-7 border-b-2 border-[#487EEB] pb-2 text-sm font-bold uppercase tracking-[0.2em] text-[#487EEB] transition hover:opacity-70">
                 VIEW OUR PROJECTS
               </button>
             </div>
@@ -169,82 +182,232 @@ function App() {
         {/* ABOUT */}
         <section
           id="about"
-          className="bg-white px-6 py-28 text-slate-900"
+          className="bg-white px-6 pb-28 pt-24 text-slate-900"
         >
           <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[0.8fr_1.2fr_1.2fr] lg:items-start">
-            
-            {/* Título da Seção */}
+            {/* TITLE */}
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#7F8286]">
                 OUR TEAM
               </p>
+
               <h2 className="mt-4 text-3xl font-bold leading-[1.15] tracking-tight text-[#1E293B] sm:text-4xl">
-                Quality design, building and development is the foundation of our business.
+                Quality design, building and development is the foundation of
+                our business.
               </h2>
             </div>
 
-            {/* Membro 1: David */}
-            <div className="flex flex-col space-y-4">
+            {/* KAIO */}
+            <div className="flex flex-col space-y-5">
               <div className="flex items-center space-x-4">
-                <div className="h-14 w-14 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
-                  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=David" alt="David Avatar" className="h-full w-full object-cover" />
+                <div className="h-16 w-16 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
+                  <img
+                    src={kaioImage}
+                    alt="Kaio"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
+
                 <div>
-                  <h3 className="text-xl font-bold text-[#1E293B]">David</h3>
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#467CE4]">FOUNDER</p>
+                  <h3 className="text-xl font-bold text-[#1E293B]">
+                    Kaio
+                  </h3>
+
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#467CE4]">
+                    FOUNDER
+                  </p>
                 </div>
               </div>
+
               <p className="text-[15px] leading-relaxed text-[#64748B]">
-                Founded LeadPro 5 years ago, overlooking operations since day 1 to ensure that our team delivers market leading quality and stays on the forefront of service offering.
+                Passionate about technology and education, Kaio helps shape
+                the vision behind Nexis by transforming Minecraft into an
+                interactive learning experience where students can study for
+                exams in a more immersive and engaging way.
               </p>
-              <div className="flex flex-col space-y-1.5 pt-2 text-xs font-semibold tracking-wider text-[#475569] uppercase">
-                <span className="flex items-center gap-2">
-                  <span className="text-slate-400">🎮</span> FATTACO#1059
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="text-slate-400">🐦</span> FATTACO_
+
+              <div className="flex flex-col space-y-2 pt-2 text-xs font-semibold uppercase tracking-wider text-[#475569]">
+                <span className="flex items-center gap-3">
+                  <FaDiscord className="text-[20px] text-slate-600" />
+                  kaio-sumikawa
                 </span>
               </div>
             </div>
 
-            {/* Membro 2: Robert */}
-            <div className="flex flex-col space-y-4">
+            {/* KAYKE */}
+            <div className="flex flex-col space-y-5">
               <div className="flex items-center space-x-4">
-                <div className="h-14 w-14 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
-                  <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Robert" alt="Robert Avatar" className="h-full w-full object-cover" />
+                <div className="h-16 w-16 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
+                  <img
+                    src={kaykeImage}
+                    alt="Kayke"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
+
                 <div>
-                  <h3 className="text-xl font-bold text-[#1E293B]">Robert</h3>
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#467CE4]">MANAGING DIRECTOR</p>
+                  <h3 className="text-xl font-bold text-[#1E293B]">
+                    Kayke
+                  </h3>
+
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#467CE4]">
+                    MANAGING DIRECTOR
+                  </p>
                 </div>
               </div>
+
               <p className="text-[15px] leading-relaxed text-[#64748B]">
-                An experienced leader who assists our clients across the globe with monetization and idea generation, helping us produce builds for 250+ unique projects and metaverse brands.
+                Focused on creativity and gameplay systems, Kayke works on
+                developing interactive NPCs, quiz mechanics, and immersive
+                environments that make studying through Minecraft more
+                dynamic and enjoyable for students.
               </p>
-              <div className="flex flex-col space-y-1.5 pt-2 text-xs font-semibold tracking-wider text-[#475569] uppercase">
-                <span className="flex items-center gap-2">
-                  <span className="text-slate-400">🎮</span> BUMBLEWASP#5111
+
+              <div className="flex flex-col space-y-2 pt-2 text-xs font-semibold uppercase tracking-wider text-[#475569]">
+                <span className="flex items-center gap-3">
+                  <FaDiscord className="text-[20px] text-slate-600" />
+                  kayke-sumikawa
                 </span>
               </div>
             </div>
-
           </div>
         </section>
 
-        {/* CONTACT */}
-        <section id="contact" className="bg-slate-900 px-6 py-20">
-          <div className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-white/5 p-10 shadow-2xl backdrop-blur-xl">
-            <h2 className="text-center text-3xl font-semibold text-white">
-              Launch your landing page today.
-            </h2>
+        {/* FOOTER */}
+        <section
+          id="contact"
+          className="bg-[#1F242C] px-6 py-14"
+        >
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+              {/* LEFT SIDE */}
+              <div className="max-w-[470px]">
+                {/* LOGO */}
+                <div className="-ml-8 flex items-center">
+                  <img
+                    src={logo}
+                    alt="Nexis Logo"
+                    className="mt-2 h-[118px] w-[118px] object-contain"
+                  />
+
+                  <h2 className="-ml-5 text-[40px] font-semibold italic leading-none tracking-[-0.03em] text-white">
+                    Nexis
+                  </h2>
+                </div>
+
+                {/* DESCRIPTION */}
+                <p className="mt-3 max-w-[390px] text-[15px] leading-7 text-[#D1D5DB]">
+                  Nexis is a Minecraft education platform focused on creating
+                  immersive learning experiences through NPCs, quizzes, and
+                  interactive worlds inspired by ENEM-style challenges.
+                </p>
+
+                {/* EMAIL */}
+                <button className="mt-4 border-b-2 border-[#487EEB] pb-1 text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:text-[#5EB2D3]">
+                  SUPPORT@NEXIS.SITE
+                </button>
+
+                {/* SOCIALS */}
+                <div className="mt-4 flex items-center gap-3">
+                  <button className="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 text-[16px] text-slate-300 transition hover:bg-white/20 hover:text-white">
+                    <FaTwitter />
+                  </button>
+
+                  <button className="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 text-[16px] text-slate-300 transition hover:bg-white/20 hover:text-white">
+                    <FaDiscord />
+                  </button>
+
+                  <button className="flex h-10 w-10 items-center justify-center rounded-md bg-white/10 text-[16px] text-slate-300 transition hover:bg-white/20 hover:text-white">
+                    <FaYoutube />
+                  </button>
+                </div>
+
+                {/* DISCORD CTA */}
+                <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-white/10 bg-[#1B2028] px-4 py-2 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]">
+                  <span className="rounded-full bg-[#2F80ED] px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.15em] text-white">
+                    HEY!
+                  </span>
+
+                  <div className="flex items-center gap-1 text-[13px] text-white">
+                    <span>Join our</span>
+
+                    <span className="flex items-center gap-1 font-semibold">
+                      <FaDiscord className="text-[#2F80ED]" />
+                      Discord
+                    </span>
+
+                    <span>for support.</span>
+                  </div>
+                </div>
+
+                {/* COPYRIGHT */}
+                <div className="mt-5 space-y-1 text-[13px] text-slate-500">
+                  <p>© Nexis, LLC 2026. All Rights Reserved.</p>
+
+                  <p>
+                    Site created by{' '}
+                    <span className="italic text-slate-400">
+                      Kaio & Kayke
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT SIDE */}
+              <div className="mt-16 flex justify-center gap-16 lg:justify-end">
+                {/* NAVIGATE */}
+                <div>
+                  <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                    Navigate
+                  </p>
+
+                  <div className="flex flex-col gap-2 text-[16px] text-white">
+                    <a href="#" className="transition hover:text-[#487EEB]">
+                      Portfolio
+                    </a>
+
+                    <a href="#" className="transition hover:text-[#487EEB]">
+                      Minecraft Worlds
+                    </a>
+
+                    <a href="#" className="transition hover:text-[#487EEB]">
+                      Marketplace
+                    </a>
+                  </div>
+                </div>
+
+                {/* ABOUT */}
+                <div>
+                  <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                    About
+                  </p>
+
+                  <div className="flex flex-col gap-2 text-[16px] text-white">
+                    <a href="#" className="transition hover:text-[#487EEB]">
+                      Team
+                    </a>
+
+                    <a href="#" className="transition hover:text-[#487EEB]">
+                      Partners
+                    </a>
+
+                    <a href="#" className="transition hover:text-[#487EEB]">
+                      Careers
+                    </a>
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div className="flex items-start pt-[20px]">
+                  <button className="border-b-2 border-[#487EEB] pb-1 text-[12px] font-bold uppercase tracking-[0.18em] text-[#5EB2D3] transition hover:opacity-70">
+                    WORK WITH US
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
-
-      {/* FOOTER */}
-      <footer className="border-t border-white/10 bg-slate-950 px-6 py-8 text-center text-sm text-slate-500">
-        <p>© 2026 Block Mind.</p>
-      </footer>
     </div>
   )
 }
