@@ -1,4 +1,26 @@
+import { useState } from 'react'
+
+const items = [
+  {
+    title: 'Interactive Learning',
+    content:
+      'Students explore Minecraft worlds, interact with NPCs and complete programming challenges through immersive educational experiences. Every lesson becomes a hands-on adventure that keeps learners engaged.',
+  },
+  {
+    title: 'Learn Programming',
+    content:
+      'Nexis introduces programming concepts such as logic, algorithms, variables and conditionals through practical Minecraft Education activities, making coding intuitive and accessible for beginners.',
+  },
+  {
+    title: 'Built for Schools',
+    content:
+      'Designed for the classroom, Nexis helps teachers create engaging lessons while encouraging collaboration, creativity and computational thinking through game-based learning.',
+  },
+]
+
 export default function WhyMinecraft() {
+  const [openIndex, setOpenIndex] = useState(0)
+
   return (
     <section className="overflow-hidden bg-[#F5F5F3] pt-20 pb-32 text-slate-900">
       {/* INTRO */}
@@ -54,29 +76,44 @@ export default function WhyMinecraft() {
             Why Minecraft?
           </h2>
 
-          <div className="mt-12">
-            {['A Cultural Icon', 'A Trusted Platform', 'Something for Everyone'].map((item) => (
-              <button
-                key={item}
-                className="
-                  flex
-                  w-full
-                  items-center
-                  justify-between
-                  border-b
-                  border-slate-400
-                  py-7
-                  text-left
-                  text-[22px]
-                  transition
-                  hover:opacity-70
-                "
-              >
-                <span>{item}</span>
+          <div className="mt-12 border-t border-slate-400">
+            {items.map((item, index) => {
+              const isOpen = openIndex === index
 
-                <span className="text-[38px] font-light">+</span>
-              </button>
-            ))}
+              return (
+                <div
+                  key={item.title}
+                  className="border-b border-slate-400"
+                >
+                  <button
+                    onClick={() =>
+                      setOpenIndex(isOpen ? -1 : index)
+                    }
+                    className="flex w-full items-center justify-between py-7 text-left transition hover:opacity-70"
+                  >
+                    <span className="text-[22px]">
+                      {item.title}
+                    </span>
+
+                    <span className="text-[34px] font-light">
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      isOpen
+                        ? 'max-h-60 pb-7 opacity-100'
+                        : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <p className="max-w-[420px] text-[18px] leading-8 text-[#505866]">
+                      {item.content}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
 
