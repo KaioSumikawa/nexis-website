@@ -22,7 +22,7 @@ export default function WhyMinecraft() {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
-    <section className="overflow-hidden bg-[#F5F5F3] pt-20 pb-32 text-slate-900">
+    <section className="overflow-hidden bg-[#FFFFFF] pt-20 pb-32 text-slate-900">
       {/* INTRO */}
       <div className="mx-auto max-w-5xl px-6 text-center">
         <p className="mx-auto max-w-[900px] text-[22px] leading-[1.7] tracking-[-0.02em] sm:text-[34px]">
