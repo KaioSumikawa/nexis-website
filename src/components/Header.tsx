@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logo from '../assets/icons/logo.png'
 
 export default function Header() {
@@ -19,6 +20,10 @@ export default function Header() {
 
         {/* NAV */}
         <nav className="hidden gap-8 text-sm uppercase tracking-[0.2em] text-slate-300 md:flex">
+          <Link to="/learning" className="transition hover:text-white">
+            Learning
+          </Link>
+
           <a href="#features" className="transition hover:text-white">
             Features
           </a>
