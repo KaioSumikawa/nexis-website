@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Expand, Shrink } from "lucide-react";
 
 export default function Presentation() {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
@@ -22,9 +22,9 @@ export default function Presentation() {
 
   const toggleFullscreen = async () => {
     try {
-      if (!document.fullscreenElement) {
-        await containerRef.current?.requestFullscreen();
-      } else {
+      if (!document.fullscreenElement && containerRef.current) {
+        await containerRef.current.requestFullscreen();
+      } else if (document.fullscreenElement) {
         await document.exitFullscreen();
       }
     } catch (err) {
